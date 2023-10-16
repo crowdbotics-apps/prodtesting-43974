@@ -1,19 +1,24 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import React, { useState } from "react";
 import { SafeAreaView, StyleSheet, TextInput, Button, Image, Text } from "react-native";
 
 const LoginScreen = () => {
+  const navigation = useNavigation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   return <SafeAreaView style={styles.container}>
       <Image style={styles.logo} source={{
       uri: "https://tinyurl.com/42evm3m3"
     }} />
-      <Text style={styles.title}>Welcome Back!</Text>
+      <Pressable onPress={() => {
+      navigation.navigate("Untitled6Copy");
+    }}><Text style={styles.title}>Welcome Back!</Text></Pressable>
       <TextInput style={styles.input} onChangeText={setEmail} value={email} placeholder="Email" keyboardType="email-address" />
       <TextInput style={styles.input} onChangeText={setPassword} value={password} placeholder="Password" secureTextEntry />
       <Button title="Login" onPress={() => {}} />
       <Button title="Save" onPress={() => {}} />
-    </SafeAreaView>;
+    <Button style={styles.TdXBdIBI}></Button></SafeAreaView>;
 };
 
 const styles = StyleSheet.create({
@@ -39,6 +44,9 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     marginBottom: 20,
     paddingLeft: 10
+  },
+  TdXBdIBI: {
+    position: "absolute"
   }
 });
 export default LoginScreen;
